@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ApartmentService } from '../apartment/services/apartment.service';
+import { Observable } from 'rxjs';
+import { IApartment } from '../apartment/models/apartment.model';
 
 @Component({
   selector: 'aa-apartment-list',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./apartment-list.component.scss']
 })
 export class ApartmentListComponent implements OnInit {
-
-  constructor() { }
+  apartments$: Observable<IApartment[]>;
+  constructor(
+    private _apartmentService: ApartmentService,
+  ) { }
 
   ngOnInit() {
+    this.apartments$ = this._apartmentService.getApartments();
   }
 
 }

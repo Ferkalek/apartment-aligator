@@ -4,13 +4,16 @@ import { ApartmentListComponent } from '../apartment-list/apartment-list.compone
 import { ApartmentRoutingModule } from './apartment-routing.module';
 import { OneApartmentComponent } from './one-apartment/one-apartment.component';
 
-
+import { ApartmentService } from './services/apartment.service';
 
 @NgModule({
   declarations: [ApartmentListComponent, OneApartmentComponent],
   imports: [
     CommonModule,
     ApartmentRoutingModule,
+  ],
+  providers: [
+    ApartmentService,
   ]
 })
 export class ApartmentModule { }

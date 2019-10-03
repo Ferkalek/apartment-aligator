@@ -1,1 +1,6 @@
 <p>apartment-list works!</p>
+<ul *ngIf="apartments$ | async as apartments">
+    <li *ngFor="let apart of apartments">
+        <a [routerLink]="apart.id">{{apart.title}}</a>
+    </li>
+</ul>

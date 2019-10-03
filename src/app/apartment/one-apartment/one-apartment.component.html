@@ -1,1 +1,3 @@
-<p>one-apartment works!</p>
+<div *ngIf="oneApartment$ | async as apartment">
+    <h2>{{apartment.title}}</h2>
+</div>
